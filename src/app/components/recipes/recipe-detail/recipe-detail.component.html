@@ -1,12 +1,12 @@
-<div class="card mb-3 d-flex flex-row" style="max-width: 300px;">
+<div class="card" style="max-width: 540px;">
   <div class="row g-0">
-    <div class="align-self-start">
+    <div class="col-md-4">
       <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid rounded-start" style="max-width: 300px">
     </div>
-    <div class="g-row-4">
+    <div class="col-md-8">
       <div class="card-body align-self-end">
         <h3 class="card-title">{{ recipe.name }}</h3>
-        <div class="btn-group mb-1">
+        <div class="btn-group mb-2">
           <button type="button"
                   class="btn btn-primary
                 dropdown-toggle">
@@ -19,10 +19,12 @@
             <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
             <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
           </ul>
-            <p>{{ recipe.description }}</p>
-            <p>Ingredients</p>
+            <p class="text-muted">{{ recipe.description }}</p>
+            <p class="text-muted">Ingredients</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!--align-self-start-->
+<!--align-self-end-->
