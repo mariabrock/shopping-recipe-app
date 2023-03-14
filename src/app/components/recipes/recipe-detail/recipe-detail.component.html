@@ -1,35 +1,27 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-width: 300px">
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{ recipe.name }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group">
-      <button type="button"
-              class="btn btn-primary
-              dropdown-toggle">
-        Manage Recipe
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Add To List</a></li>
-        <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
-        <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
-      </ul>
+<div class="card mb-3 d-flex flex-row" style="max-width: 300px;">
+  <div class="row g-0">
+    <div class="align-self-start">
+      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid rounded-start" style="max-width: 300px">
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        {{ recipe.description }}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        Ingredients
+    <div class="g-row-4">
+      <div class="card-body align-self-end">
+        <h3 class="card-title">{{ recipe.name }}</h3>
+        <div class="btn-group mb-1">
+          <button type="button"
+                  class="btn btn-primary
+                dropdown-toggle">
+            Manage Recipe
+          </button>
+        </div>
+        <div class="card-text">
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Add To List</a></li>
+            <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+            <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+          </ul>
+            <p>{{ recipe.description }}</p>
+            <p>Ingredients</p>
+        </div>
       </div>
     </div>
   </div>
