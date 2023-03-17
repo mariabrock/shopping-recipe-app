@@ -1,0 +1,18 @@
+<a
+  href="#"
+  class="list-group-item clearfix d-flex flex-row"
+  (click)="onSelected()">
+  <div class="align-self-start m-2">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="max-height: 100px;">
+  </div>
+  <div class="align-self-end">
+    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+    <p class="list-group-item-text">{{ recipe.description }}</p>
+  </div>
+  <!--        string interpolation followed by data binding for use in src: -->
+  <!--        src="{{ recipe.imagePath }}"-->
+</a>
