@@ -9,15 +9,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNav" [class.collapse]="collapsed" (window:resize)="collapsed = true">
       <ul class="nav navbar-nav">
-        <li>
-          <a href="#" (click)="onClick('recipes')">Recipes</a>
-        </li>
-        <li>
-          <a href="#" (click)="onClick('shopping-list')">Shopping List</a>
-        </li>
+        <li><a href="#" (click)="onClick('recipes')">Recipes</a></li>
+        <li><a href="#" (click)="onClick('shopping-list')">Shopping List</a></li>
       </ul>
 
-        <span appDropdown class="dropdown nav-item navbar-left">
+        <span appDropdown class="dropdown nav-item navbar-right">
           <button type="button"
                   class="btn btn-info dropdown-toggle">
             <a href="#" class="dropdown-toggle"
@@ -27,7 +23,6 @@
               <span class="caret"></span>
             </a>
           </button>
-
           <ul class="dropdown-menu">
             <li><a href="#">Save Data</a></li>
             <li><a href="#">Fetch Data</a></li>

@@ -2,14 +2,14 @@
   href="#"
   class="list-group-item clearfix d-flex flex-row"
   (click)="onSelected()">
-  <div class="align-self-start m-2">
+  <div class="pull-right m-2">
     <img
       [src]="recipe.imagePath"
       alt="{{ recipe.name }}"
       class="img-responsive"
       style="max-height: 100px;">
   </div>
-  <div class="align-self-end">
+  <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
     <p class="list-group-item-text">{{ recipe.description }}</p>
   </div>
