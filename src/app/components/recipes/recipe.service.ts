@@ -22,11 +22,10 @@ export class RecipeService {
       new Ingredient('Avocado', 1),
       new Ingredient('Hard Boiled Egg', 1),
       new Ingredient('Cheddar  Cheese', 3)
-
     ]),
     new Recipe(
       'Milos Favorite Pizza',
-      'Bougie pizza loved by this guy names Milo. He definitely fits our description of hipster.',
+      'Bougie pizza loved by this guy named Milo. He definitely fits our description of hipster.',
       'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1081&q=80',
     [
       new Ingredient('Dough', 5),
