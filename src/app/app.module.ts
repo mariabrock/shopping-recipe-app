@@ -12,7 +12,7 @@ import { RecipeListComponent } from './components/recipes/recipe-list/recipe-lis
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from "./components/shopping/shopping-list.service";
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { RecipeHomeComponent } from './components/recipes/recipe-home/recipe-home.component';
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 
