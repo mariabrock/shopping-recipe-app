@@ -13,19 +13,28 @@ export class DataStorageService {
 
   storeRecipes() {
     const recipes = this.recipesService.getRecipes();
-    this.http.put('https://ng-materclass-course-project-default-rtdb.firebaseio.com/recipes.json',
-      recipes)
+    this.http
+      .put(
+        'https://ng-materclass-course-project-default-rtdb.firebaseio.com/recipes.json',
+      recipes
+      )
       .subscribe(res => {
         console.log(res);
       });
   }
 
   fetchRecipes() {
-    return this.http.get<Recipe[]>('https://ng-materclass-course-project-default-rtdb.firebaseio.com/recipes.json')
+    return this.http
+      .get<Recipe[]>(
+        'https://ng-materclass-course-project-default-rtdb.firebaseio.com/recipes.json'
+      )
       .pipe(
         map(recipes => {
         return recipes.map(recipe => {
-          return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients: [] };
+          return {
+            ...recipe,
+            ingredients: recipe.ingredients ? recipe.ingredients: []
+          };
         });
       }),
         tap(recipes =>{
