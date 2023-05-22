@@ -27,4 +27,8 @@ private ingredientChangeSub: Subscription;
   ngOnDestroy() {
     this.ingredientChangeSub.unsubscribe();
   }
+
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index);
+  }
 }
