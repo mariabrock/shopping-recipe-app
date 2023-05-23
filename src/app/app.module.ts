@@ -17,10 +17,12 @@ import { RecipeHomeComponent } from './components/recipes/recipe-home/recipe-hom
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RecipeService } from "./components/recipes/recipe.service";
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
     ShoppingComponent,
     RecipesComponent,
     ListEditComponent,
