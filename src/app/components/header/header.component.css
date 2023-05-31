@@ -6,6 +6,7 @@
   color: white;
 }
 
-.btn-info {
+.btn-info, .btn-warning {
   margin-top: 1rem;
+  margin-right: 1rem;
 }

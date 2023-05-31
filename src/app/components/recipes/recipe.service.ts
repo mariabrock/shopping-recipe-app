@@ -10,8 +10,6 @@ import { Subject } from "rxjs";
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  constructor(private slService: ShoppingListService) { }
-
   // recipes: Recipe[] = [
   //   new Recipe(
   //     'Cobb Salad',
@@ -39,6 +37,8 @@ export class RecipeService {
   // ];
 
   private recipes: Recipe[] = [];
+
+  constructor(private slService: ShoppingListService) { }
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
