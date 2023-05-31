@@ -29,10 +29,7 @@ export class DataStorageService {
   fetchRecipes() {
         return this.http
           .get<Recipe[]>(
-            'https://ng-materclass-course-project-default-rtdb.firebaseio.com/recipes.json',
-            {
-              params: new HttpParams().set('auth', user.token)
-            }
+            'https://ng-materclass-course-project-default-rtdb.firebaseio.com/recipes.json'
           ).pipe(
       map(recipes => {
         return recipes.map(recipe => {
