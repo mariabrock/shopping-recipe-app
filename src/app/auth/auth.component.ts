@@ -1,12 +1,12 @@
-import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthResponseData, AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-auth",
-  templateUrl: "./auth.component.html",
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
 })
 export class AuthComponent {
   inLoginMode = true;
@@ -20,7 +20,7 @@ export class AuthComponent {
   }
 
   onSubmit(form: NgForm) {
-    if(!form.valid) {
+    if (!form.valid) {
       return;
     }
     const email = form.value.email;
@@ -31,28 +31,31 @@ export class AuthComponent {
 
     this.isLoading = true;
 
-    if(this.inLoginMode) {
+    if (this.inLoginMode) {
       authObservable = this.authService.login(email, password);
     } else {
-      authObservable = this.authService.signup( email, password );
+      authObservable = this.authService.signup(email, password);
     }
 
-      authObservable
-        .subscribe({
-          next: (resData) => {
-            console.log(resData);
-            this.isLoading = false;
-            this.router.navigate(['/recipes'])
-          },
-          error: (errorMessage) => {
-            console.error(errorMessage);
-            this.error = errorMessage;
-            this.isLoading = false;
-          }
-        });
-  // the subscriptions for login and sign up now line in their own observable => authObservable
-  // because we are doing the same things on login and sign up we simply reference the observable
-  // this helps us to control loading state and set any errors
-      form.reset();
-    }
+    authObservable.subscribe({
+      next: (resData) => {
+        console.log(resData);
+        this.isLoading = false;
+        this.router.navigate(['/recipes']);
+      },
+      error: (errorMessage) => {
+        console.error(errorMessage);
+        this.error = errorMessage;
+        this.isLoading = false;
+      },
+    });
+    // the subscriptions for login and sign up now line in their own observable => authObservable
+    // because we are doing the same things on login and sign up we simply reference the observable
+    // this helps us to control loading state and set any errors
+    form.reset();
   }
+
+  onHandleError() {
+    this.error = null;
+  }
+}
