@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
       take(1), // take allows us to take the 1st things it finds and ends the subscription.
       //this means we won't have to worry about it running indefinitely
       map(user =>{
-      const isAuth = !!user;
+      const isAuth = !!user; // !user ? false : true;
       if(isAuth) {
         return true;
       }
