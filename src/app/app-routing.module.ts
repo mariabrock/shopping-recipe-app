@@ -1,35 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from "@angular/router";
-import { RecipesComponent } from "./components/recipes/recipes.component";
-import { ShoppingComponent } from "./components/shopping/shopping.component";
-import { RecipeHomeComponent } from "./components/recipes/recipe-home/recipe-home.component";
-import { RecipeDetailComponent } from "./components/recipes/recipe-detail/recipe-detail.component";
-import {RecipeEditComponent} from "./components/recipes/recipe-edit/recipe-edit.component";
-import { RecipesResolverService } from "./components/recipes/recipes-resolver.service";
+import { RouterModule, Routes } from '@angular/router';
+import { ShoppingComponent } from './components/shopping/shopping.component';
 import { AuthComponent } from './auth/auth.component';
-import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/recipes', pathMatch: "full"},
-  {path: 'recipes', component: RecipesComponent,
-    canActivate: [AuthGuard],
-    children:[
-      {path: '', component: RecipeHomeComponent},
-      {path: 'new', component: RecipeEditComponent},
-      {path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService]},
-      {path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService]}
-    ]},
-  {path: 'shopping-list', component: ShoppingComponent},
-  { path: 'auth', component: AuthComponent }
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  { path: 'shopping-list', component: ShoppingComponent },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(appRoutes),
-  ],
-  exports: [RouterModule]
+  imports: [CommonModule, RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
