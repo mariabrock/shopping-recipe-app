@@ -10,7 +10,7 @@ export class AuthInterceptorService implements HttpInterceptor {
   intercept( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>> {
     return this.authService.user.pipe(
       take(1),
-      exhaustMap(user => {
+      exhaustMap(user => { //an observable, will map to an inner obs & ignore other values until it is completed
         if(!user) {
           return next.handle(req);
         }
