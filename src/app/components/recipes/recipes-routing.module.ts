@@ -6,6 +6,7 @@ import { RecipeHomeComponent } from './recipe-home/recipe-home.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipesResolverService } from './recipes-resolver.service';
+// import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', component: RecipeHomeComponent },
       { path: 'new', component: RecipeEditComponent },
+      // { path: 'list', component: RecipeListComponent },
       {
         path: ':id',
         component: RecipeDetailComponent,
